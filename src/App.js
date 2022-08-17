@@ -1,25 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+//Fragments
+import Header from "./components/header/Header/header"
+import Footer from "./components/header/Footer/footer" 
+import Main from "./components/header/Main/Main"
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <>
+    <Header/>  
+    <Main/>
+    <Footer/>
+    </> 
+  )}
+//Fragment: etiqueta sin nombre   // IMPORTANTE: Llamo a Header, footer, etc., que importé desde mis componentes
 
-export default App;
+export default App 
+
+  

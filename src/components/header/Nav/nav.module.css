@@ -1,0 +1,28 @@
+.navitem{
+    list-style: none;
+    color: pink;
+    border: 1px solid pink;
+    width: 160px;
+    height: 40px;
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: ease 0.5s;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    
+}
+.lista{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 3rem;
+
+}
+.navitem:hover{
+    background-color: rgb(249, 150, 150);
+    color: black;
+}
