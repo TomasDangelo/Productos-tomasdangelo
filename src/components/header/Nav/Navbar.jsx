@@ -1,5 +1,6 @@
 import React from 'react'
 import estilos from './nav.module.css'
+import CartWidget from './CartWidget'
 
 const Navbar = () => {
   return (
@@ -20,8 +21,10 @@ const Navbar = () => {
         <li className={estilos.navitem}>
             Ayuda
         </li>
+        <CartWidget />
     </ul>
     </nav>
+    
   )
 }
 
