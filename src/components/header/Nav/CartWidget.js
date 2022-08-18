@@ -1,11 +1,9 @@
 import React from 'react'
-
+import {BsFillCartCheckFill} from 'react-icons/bs'
 const CartWidget = () => {
   return (
     <div>
-        <span className="material-icons-outlined">
-shopping_cart
-</span>
+       <BsFillCartCheckFill/>
     </div>
   )
 }

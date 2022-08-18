@@ -8,8 +8,8 @@ const App = () => {
   return (
     <>
     <Header/>  
-    <Main/>
     <ItemListContainer saludo="Hola! Bienvenido a mi página de React"/>
+    <Main/>
     <Footer/>
     </> 
   )}

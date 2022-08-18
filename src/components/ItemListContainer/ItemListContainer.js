@@ -1,8 +1,9 @@
 import React from 'react'
+import estilos from './item.module.css'
 
-const ItemListContainer = (propsaludo) => {
+const ItemListContainer = ({saludo}) => {
   return (
-    <div>{propsaludo.saludo}</div>
+    <div className={estilos.button}>{saludo}</div>
   )
 }
 
