@@ -1,6 +1,7 @@
 import React from 'react'
 import estilos from './nav.module.css'
 import CartWidget from './CartWidget'
+import Button from '../../Button/Button'
 
 const Navbar = () => {
   return (
@@ -22,6 +23,7 @@ const Navbar = () => {
             Ayuda
         </li>
         <CartWidget />
+        <Button prop="Sign In"/>
     </ul>
     </nav>
     
