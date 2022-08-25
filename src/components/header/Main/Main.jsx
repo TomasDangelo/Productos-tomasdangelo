@@ -1,11 +1,10 @@
 import React from 'react'
+import ItemListContainer from '../../ItemListContainer/ItemListContainer'
 
 const Main = () => {
   return (
     <main className='contenedorMain'>
-        <section>
-        <h2></h2>
-        </section>
+       <ItemListContainer/>
     </main>
       
   )

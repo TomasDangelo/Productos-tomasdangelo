@@ -1,0 +1,19 @@
+
+.divcontainer{
+    height: 350px;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 2% 0% 2% 40%;
+    background-color: rgb(247, 241, 235);
+    border-radius: 15px;
+    padding: 1%;
+}
+
+.titulo{
+    color: lightskyblue;
+    font-size: 24px;
+}
+

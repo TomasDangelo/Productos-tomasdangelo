@@ -16,7 +16,7 @@ const restar = () =>{
 
 onAdd = () => {
   let carrito = []
-  const item = {nombre: "soy un item del carrito"}
+  const item = {nombre: "soy un item del carrito", cantidad: count}
   carrito.push(item)
   console.log(carrito)
   alert("Productos agregados exitosamente")
@@ -26,6 +26,12 @@ onAdd = () => {
 return (
 <div className={estilos.divcontainer}>    
             <h3 className={estilos.titulo}>Producto</h3>
+            <select className={estilos.carrito}>
+            <option value="remera">Remera negra</option>
+            <option value="gorra">Gorra</option>
+            <option value="zapatillas">Zapatillas</option>
+            </select>
+            
             <div className={estilos.row}>
               <button className={estilos.buttons} onClick={restar}>-</button>
               <button className={estilos.buttons}>{count}</button>           
