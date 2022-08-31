@@ -1,0 +1,37 @@
+.container{
+    height: 100vh;
+    margin: 0 auto;
+    margin-top: 1rem;
+    width: 600px;
+    border: 1px solid wheat;
+    box-shadow: 1px 0px 0px 1px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
+}
+
+.title{
+color: chocolate;
+font-style: oblique;
+}
+
+.price{
+font-style: oblique;
+}
+
+.description{
+text-align: center;
+font-style: oblique;
+
+}
+
+.category{
+font-style: oblique;
+}
+
+.image{
+width: 60%;
+object-fit: contain;
+}

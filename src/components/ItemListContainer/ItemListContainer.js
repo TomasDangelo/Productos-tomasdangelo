@@ -4,6 +4,7 @@ import ItemList from '../ItemList/ItemList'
 
 const ItemListContainer = () => {
 const [items, setItems] = useState([])
+const [contenidoCargando, setContenidoCargando] = useState(true)
 
 useEffect(()=>{
   const obtenerProds = new Promise((resolve, reject)=>{
@@ -20,13 +21,13 @@ obtenerProds
 .catch((error)=>{
   console.log("Error")
 })
-
+.finally(()=>{setContenidoCargando(false)})
 }, []) ///Fin del useEffect & Array de dependencias vacío
 
 
   return (
     <div>
-      <ItemList items={items}/>
+      {contenidoCargando? (<h1>Cargando lista de productos...</h1>) : (<ItemList items={items}/>)}
     </div>
   )
 }
