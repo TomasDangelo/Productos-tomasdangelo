@@ -2,9 +2,10 @@
     height: 100vh;
     margin: 0 auto;
     margin-top: 1rem;
+    margin-bottom: 1rem;
     width: 600px;
     border: 1px solid wheat;
-    box-shadow: 1px 0px 0px 1px;
+
     border-radius: 20px;
     display: flex;
     flex-direction: column;
@@ -15,23 +16,27 @@
 .title{
 color: chocolate;
 font-style: oblique;
+margin: 2%;
 }
 
 .price{
 font-style: oblique;
+margin: 1%;
 }
 
 .description{
 text-align: center;
 font-style: oblique;
-
+margin: 1%;
 }
 
 .category{
 font-style: oblique;
+margin: 1%;
 }
 
 .image{
-width: 60%;
+max-width: 40%;
 object-fit: contain;
+border-radius: 8px;
 }

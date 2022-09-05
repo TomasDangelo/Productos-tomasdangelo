@@ -1,4 +1,6 @@
 .contenedorprods{
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row nowrap;
+    max-width: 30%;
+    align-items: center;
 }

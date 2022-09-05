@@ -2,27 +2,17 @@ import React from 'react'
 import estilos from './nav.module.css'
 import CartWidget from './CartWidget'
 import Button from '../../Button/Button'
+import {NavLink} from 'react-router-dom'
 
 const Navbar = () => {
   return (
     <nav className={estilos.navBar}>
     <ul className={estilos.lista}>
-        <li className={estilos.navitem}>
-          Inicio
-        </li>
-        <li className={estilos.navitem}>
-            Servicios
-        </li>
-        <li className={estilos.navitem}>
-            Productos
-        </li>
-        <li className={estilos.navitem}>
-            Contacto            
-        </li>
-        <li className={estilos.navitem}>
-            Ayuda
-        </li>
-        <CartWidget />
+        <li className={estilos.navitem}><NavLink className={estilos.navitem} to='/'>HEY JUDE</NavLink></li>
+        <li className={estilos.navitem}><NavLink className={estilos.navitem} to='/category/zapatillas'>Zapatillas</NavLink></li>
+        <li className={estilos.navitem}><NavLink className={estilos.navitem} to='/category/remeras'>Remeras</NavLink></li>
+        <li className={estilos.navitem}><NavLink className={estilos.navitem} to='/category/gorras'>Gorras</NavLink></li>
+        {/* <NavLink to='/cartwidget'>  <CartWidget />  </NavLink>       */}
         <Button prop="Sign In"/>
     </ul>
     </nav>

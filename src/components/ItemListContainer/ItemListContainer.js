@@ -1,33 +1,35 @@
 import React, { useEffect, useState } from 'react'
 import {Products} from '../../mock/Products'
 import ItemList from '../ItemList/ItemList'
+import {useParams} from 'react-router-dom'
+import Loader from '../Loader/Loader'
 
 const ItemListContainer = () => {
 const [items, setItems] = useState([])
 const [contenidoCargando, setContenidoCargando] = useState(true)
+const {id} = useParams()
 
 useEffect(()=>{
-  const obtenerProds = new Promise((resolve, reject)=>{
-  setTimeout(() => {
-  resolve(Products)
-  }, 2000);
-  }) ///Fin promesa
-  
-//Inicio captar promesa
-obtenerProds
-.then((datos)=>{
-  setItems(datos)
-})
-.catch((error)=>{
-  console.log("Error")
-})
+      const obtenerProds = new Promise((resolve, reject)=>{
+      const prodFiltrados = Products.filter((prod) => prod.category === id)
+      setTimeout(() => {
+      resolve(id? prodFiltrados : Products)
+      }, 1000);
+      }) 
+    obtenerProds
+    .then((datos)=>{
+      setItems(datos)
+    })
+    .catch((error)=>{
+      console.log("Error")
+    })
+   
 .finally(()=>{setContenidoCargando(false)})
-}, []) ///Fin del useEffect & Array de dependencias vacío
-
+}, [id]) 
 
   return (
     <div>
-      {contenidoCargando? (<h1>Cargando lista de productos...</h1>) : (<ItemList items={items}/>)}
+      {contenidoCargando? (<Loader/>) : (<ItemList items={items}/>)}
     </div>
   )
 }

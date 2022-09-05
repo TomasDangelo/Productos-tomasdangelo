@@ -3,22 +3,47 @@
     width: 350px;
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-evenly;
-    align-items: center;
     margin: 2% 0% 2% 40%;
-    background-color: rgb(247, 241, 235);
+    border: 0.5px solid rgb(123, 167, 248);
+    box-shadow: 0px 1px 3px 0px;
     border-radius: 15px;
-    padding: 1%;
+    padding: 2%;
     grid-area: prod;
-}
-
-.titulo{
-    color: lightskyblue;
-    font-size: 24px;
+    transition: ease-in 1s;
 }
 
 .divflex{
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
 }
 
+.titulo{
+    color: rgb(123, 167, 248);
+    font-size: 1.3rem;
+    margin: 2%;
+}
+
+.imgg{
+    border-radius: 10px;
+    height: 250px;
+    width: 250px;
+}
+
+.butt{
+    margin-right: 5px;
+    width: 70px;
+    height: 40px;
+    display: inline-block;
+    border-radius: 7px;
+    border: none;
+    background: #5a9cff;
+    color: white;
+    font-family: inherit;
+    text-align: center;
+    font-size: 13px;
+    box-shadow: 0px 14px 56px -11px #1875FF;
+    padding: 1em;
+    cursor: pointer;
+}
