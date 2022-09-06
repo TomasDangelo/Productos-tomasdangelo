@@ -6,7 +6,7 @@ const ItemCount = ({stock, initial, onAdd}) => {
 const [count, setCount] = useState(initial)  
 
 const sumar = () =>{   
-  count < stock ? setCount(count + 1) :  alert("No se pueden agregar más productos al carrito")          
+  count < stock && setCount(count + 1)         
 }                                                                                         
 const restar = () =>{
     setCount(count - 1)
@@ -31,13 +31,12 @@ return (
             <option value="gorra">Gorra</option>
             <option value="zapatillas">Zapatillas</option>
             </select>
-            
             <div className={estilos.row}>
               <button className={estilos.buttons} onClick={restar}>-</button>
               <button className={estilos.buttons}>{count}</button>           
               <button className={estilos.buttons} onClick={sumar}>+</button>
             </div>         
-            <button className={estilos.carrito} onClick={onAdd}>Agregar al carrito</button>
+            <button className={estilos.carrito} onClick={()=>onAdd(count)}>Agregar al carrito</button>
 </div>
 )
 }

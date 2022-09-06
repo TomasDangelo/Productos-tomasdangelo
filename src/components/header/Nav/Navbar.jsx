@@ -8,7 +8,7 @@ const Navbar = () => {
   return (
     <nav className={estilos.navBar}>
     <ul className={estilos.lista}>
-        <li className={estilos.navitem}><NavLink className={estilos.navitem} to='/'>HEY JUDE</NavLink></li>
+        <li className={estilos.navitem}><NavLink className={estilos.navitem} to='/'>Tom's Store</NavLink></li>
         <li className={estilos.navitem}><NavLink className={estilos.navitem} to='/category/zapatillas'>Zapatillas</NavLink></li>
         <li className={estilos.navitem}><NavLink className={estilos.navitem} to='/category/remeras'>Remeras</NavLink></li>
         <li className={estilos.navitem}><NavLink className={estilos.navitem} to='/category/gorras'>Gorras</NavLink></li>
