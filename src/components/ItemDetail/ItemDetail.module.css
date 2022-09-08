@@ -1,20 +1,21 @@
 .container{
-    height: 100vh;
+    height: 80vh;
     margin: 0 auto;
     margin-top: 1rem;
     margin-bottom: 1rem;
-    width: 600px;
-    border: 1px solid wheat;
-
+    width: 28rem;
+    border: 1px solid #2E498F;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;  
+    align-items: center;
+    box-shadow: 1.5px 1.5px 4px;  
 }
 
 .title{
-color: chocolate;
+color: #2E498F;
+font-weight: bold;
 font-style: oblique;
 margin: 2%;
 }
@@ -39,4 +40,10 @@ margin: 1%;
 max-width: 40%;
 object-fit: contain;
 border-radius: 8px;
+}
+
+.botonCart{
+    display: grid;
+    place-items: center;
+    margin-bottom: 1%;
 }

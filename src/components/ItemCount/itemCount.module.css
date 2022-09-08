@@ -4,9 +4,9 @@
     width: 350px;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
-    margin-left: 40%;
+    margin: 0 auto;
     margin-bottom: 2%;
     background-color: rgb(247, 241, 235);
     border-radius: 15px;
@@ -14,8 +14,9 @@
 }
 
 .titulo{
-    color: lightskyblue;
-    font-size: 24px;
+    color: rgba(0, 0, 0, 0.671);
+    font-size: 22px;
+    margin-bottom: 1%;
 }
 
 .buttons , .carrito{

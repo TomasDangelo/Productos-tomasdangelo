@@ -14,18 +14,9 @@ const restar = () =>{
     count === limiteInferior && setCount(count)
 }
 
-onAdd = () => {
-  let carrito = []
-  const item = {nombre: "soy un item del carrito", cantidad: count}
-  carrito.push(item)
-  console.log(carrito)
-  alert("Productos agregados exitosamente")
-  setCount(initial)
-}
-
 return (
 <div className={estilos.divcontainer}>    
-            <h3 className={estilos.titulo}>Producto</h3>
+            <h3 className={estilos.titulo}>¿Qué producto querés?</h3>
             <select className={estilos.carrito}>
             <option value="remera">Remera negra</option>
             <option value="gorra">Gorra</option>

@@ -5,5 +5,6 @@
 }
 
 .active{
-    color: rgba(255, 58, 101, 0.897);
+    color: rgba(255, 255, 255, 0.897);
+    background-color: #2E498F;
 }

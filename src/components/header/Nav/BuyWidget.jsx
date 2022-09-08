@@ -1,8 +1,10 @@
 import React from 'react'
-import {HiOutlineShoppingBag} from 'react-icons/hi'
+import {MdShoppingCart} from 'react-icons/md'
 const BuyWidget = () => {
   return (
-    <div><HiOutlineShoppingBag/></div>
+    <div>
+      <MdShoppingCart/>
+    </div>
   )
 }
 

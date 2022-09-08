@@ -1,6 +1,5 @@
 import React from 'react'
 import estilos from './nav.module.css'
-import CartWidget from './CartWidget'
 import Button from '../../Button/Button'
 import {NavLink} from 'react-router-dom'
 
