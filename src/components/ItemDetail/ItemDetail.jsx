@@ -1,24 +1,21 @@
-import React, {useState} from 'react'
+import React, {useState, useContext} from 'react'
 import Button from '../Button/Button'
 import estilos from './ItemDetail.module.css'
 import ItemCount from '../ItemCount/ItemCount'
+import { CartContext } from '../../context/CartContext'
  
 const ItemDetail = ({item}) => {
 const [cantidad, setCantindad] = useState(0)
+const {addToCart, getProductQuantity} = useContext(CartContext)
+
 const onAdd = (quantity) => {
   setCantindad(quantity)
-  let carrito = []
-  const item = {nombre: "soy un item del carrito"}
-  carrito.push(item)
-  console.log(carrito)
   alert("Productos agregados exitosamente")
+  addToCart(item, quantity)
 }
 
-// onAdd = () => {
-//   
-//   
-//   setCount(initial)
-// }
+const quantity = getProductQuantity(item.id)
+//Para que siempre devuelva la canitdad que el cliente ya tiene en el carrito desde antes
 
   return (
 <div key={item.id}>
@@ -29,8 +26,7 @@ const onAdd = (quantity) => {
     <p className={estilos.description}><strong>Stock disponible</strong><br></br>{item.stock} unidades</p>
     <p className={estilos.category}> <strong>Categoría</strong><br></br> {item.category}</p>
     </div>
-    {/* <ItemCount stock={item.stock} initial={1} onAdd={onAdd}/> */}
-    {cantidad === 0? (<ItemCount stock={item.stock} initial={1} onAdd={onAdd}/>) : ( <div className={estilos.botonCart}><Button/></div>)}
+    {cantidad === 0? (<ItemCount stock={item.stock} initial={quantity} onAdd={onAdd}/>) : ( <div className={estilos.botonCart}><Button isInHeader={true}/></div>)}
 </div>
   )
 }

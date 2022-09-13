@@ -7,14 +7,12 @@ import Loader from '../Loader/Loader'
 const ItemListContainer = () => {
 const [items, setItems] = useState([])
 const [contenidoCargando, setContenidoCargando] = useState(true)
-const {id} = useParams()
+const { id } = useParams()
 
 useEffect(()=>{
       const obtenerProds = new Promise((resolve, reject)=>{
       const prodFiltrados = Products.filter((prod) => prod.category === id)
-      setTimeout(() => {
-      resolve(id? prodFiltrados : Products)
-      }, 1000);
+      setTimeout(() => {resolve(id? prodFiltrados : Products)}, 1000);
       }) 
     obtenerProds
     .then((datos)=>{

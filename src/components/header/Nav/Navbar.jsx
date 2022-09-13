@@ -11,8 +11,7 @@ const Navbar = () => {
         <li className={estilos.navitem}><NavLink className={estilos.navitem} to='/category/zapatillas'>Zapatillas</NavLink></li>
         <li className={estilos.navitem}><NavLink className={estilos.navitem} to='/category/remeras'>Remeras</NavLink></li>
         <li className={estilos.navitem}><NavLink className={estilos.navitem} to='/category/gorras'>Gorras</NavLink></li>
-        {/* <NavLink to='/cartwidget'>  <CartWidget />  </NavLink>       */}
-        <Button prop="Sign In"/>
+        <Button isInHeader={true}/>
     </ul>
     </nav>
     
