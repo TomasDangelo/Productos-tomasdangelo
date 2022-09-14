@@ -1,23 +1,31 @@
-.botonEstilado{
+.botonEstilado, .botonEstiladoDos{
     margin-right: 5px;
     width: 100px;
     height: 50px;
-    display: inline-block;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     border-radius: 7px;
     border: none;
     background: #5a9cff;
     color: white;
     font-family: inherit;
-    text-align: center;
-    font-size: 13px;
+    font-size: 1.4rem;
     box-shadow: 0px 14px 56px -11px #1875FF;
-    padding: 1em;
     cursor: pointer;
 }
 
 .link{
     text-decoration: none;
     font-weight: bold;
-    font-size: 0.9rem;
     color: #ffff;
+    font-size: 1.2rem;
+    margin-bottom: 4%;
+    margin-left: 2%;
+}
+
+.botonEstiladoDos{
+    margin-left: 45%;
+    padding: 0.1em;
 }

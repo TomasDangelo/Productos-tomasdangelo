@@ -29,16 +29,19 @@ const getProductQuantity = (id) => {
 
 const totalPrice = () =>{
   let acumulador = 0
-  cart.forEach((prod) => {
-    acumulador += prod.price * prod.cantidad
-  })
+  cart.forEach((prod) => {acumulador += prod.price * prod.cantidad})
   return acumulador
+}
+
+
+const totalLength = () => {
+  if (cart.length === 0){return ""} else {return cart.length}
 }
 
 console.log(cart)
 
   return (
-    <CartContext.Provider value={{cart, addToCart, clearCart, removeItem, getProductQuantity, totalPrice}}>
+    <CartContext.Provider value={{cart, addToCart, clearCart, removeItem, getProductQuantity, totalPrice, totalLength}}>
         {children}  {/* Son todos mis componentes que están envueltos por el contexto */}
     </CartContext.Provider>
   )

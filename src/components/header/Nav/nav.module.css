@@ -1,16 +1,16 @@
-.navitem{
+.navitem, .navitemdos{
     list-style: none;
-    color: #426ACF;
-    border: 1px solid #426ACF;
-    width: 160px;
-    height: 40px;
+    color: #5a9cff;
+    border: 1px solid #5a9cff;
+    width: 8rem;
+    height: 2.5rem;
     text-align: center;
     font-size: 18px;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: ease 0.5s;
-    border-radius: 10px;
+    border-radius: 7px;
     font-weight: 600;
     cursor: pointer;
     text-decoration: none;
@@ -24,6 +24,13 @@
 
 }
 .navitem:hover{
-    background-color: #2E498F;
+    background-color: #34529d;
     color: black;
+}
+
+.navitemdos{
+    border: none;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 0.5%;
 }
