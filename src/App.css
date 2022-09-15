@@ -1,9 +1,7 @@
 .App {
   text-align: center;
 }
-.active{
-  color:deeppink
-}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

@@ -9,7 +9,6 @@ const Button = (prop) => {
 const {totalLength} = useContext(CartContext)
 const totalProds = totalLength
 
-
 return (prop.isInHeader? 
   (<button className={estilos.botonEstilado}>
   <BuyWidget/>

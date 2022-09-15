@@ -1,33 +1,30 @@
 import React, { useEffect, useState } from 'react'
 import ItemDetail from '../ItemDetail/ItemDetail'
 import {useParams} from 'react-router-dom'
-import { Products } from '../../mock/Products'
-import Loader from '../Loader/Loader'
+import { database } from '../../firebaseConfig'
+import {collection, getDoc, doc} from 'firebase/firestore'
 
 const ItemDetailContainer = () => {
     const [item, setItem] = useState([])
-    const [contenidoCargando, setContenidoCargando] = useState(true)
     const {id} = useParams()
     
     useEffect(()=>{
-        const idNumerico = Number(+id)
-        const obtenerProds = new Promise((resolve, reject)=>{
-        const productofiltrado = Products.find((prod) => prod.id === idNumerico)
-        setTimeout(() => {
-          resolve(id? productofiltrado : Products)
-          }, 1000);
-              })
-          obtenerProds
-              .then((datos)=>{
-                setItem(datos)
-              })
-
-        .finally(()=>{setContenidoCargando(false)})
+      const itemCollection = collection(database, "productos")
+      const ref = doc(itemCollection, id)
+      // const pregunta = id ? (ref) : (itemCollection)
+      getDoc(ref).then((res)=>{
+        console.log(res)
+        setItem({  /* En este caso no tengo que mapear como en el itemListContainer, pq es un objeto */
+          id: res.id,
+          ...res.data()
+        })
+      })
+      
     }, [id])  
 
   return (
     <div>
-        {contenidoCargando? (<Loader/>) : (<ItemDetail item={item}/>)}
+        <ItemDetail item={item}/>
    </div>
   )
 }

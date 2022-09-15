@@ -1,33 +1,43 @@
 import React, { useEffect, useState } from 'react'
-import {Products} from '../../mock/Products'
 import ItemList from '../ItemList/ItemList'
 import {useParams} from 'react-router-dom'
-import Loader from '../Loader/Loader'
+import {collection, getDocs, query, where} from 'firebase/firestore'
+import { database } from '../../firebaseConfig'
 
 const ItemListContainer = () => {
 const [items, setItems] = useState([])
-const [contenidoCargando, setContenidoCargando] = useState(true)
 const { id } = useParams()
 
 useEffect(()=>{
-      const obtenerProds = new Promise((resolve, reject)=>{
-      const prodFiltrados = Products.filter((prod) => prod.category === id)
-      setTimeout(() => {resolve(id? prodFiltrados : Products)}, 300);
+  const itemCollection = collection(database, "productos")
+  if (!id){
+    getDocs(itemCollection).then((res)=>{
+      const products = res.docs.map((prod)=>{       
+        return {
+          id: prod.id,          /* Agregamos el id de c/ prod porque no se muestra solo con la prop "docs"; luego spread para obtener el resto */
+          ...prod.data()        /* .data() es método de firestore para acceder a sus datos proveniente de bases */
+        }
       }) 
-    obtenerProds
-    .then((datos)=>{
-      setItems(datos)
+      setItems(products)        
     })
-    .catch((error)=>{
-      console.log("Error")
+  } 
+  else  {
+    const q = query(itemCollection, where("category","==", id))
+    getDocs(q).then((res)=>{
+      const products = res.docs.map((prod)=>{       
+        return {
+          id: prod.id,          /* Agregamos el id de c/ prod porque no se muestra solo con la prop "docs"; luego spread para obtener el resto */
+          ...prod.data()        /* .data() es método de firestore para acceder a sus datos proveniente de bases */
+        }
+      }) 
+      setItems(products)        
     })
-   
-.finally(()=>{setContenidoCargando(false)})
-}, [id]) 
+  }
+},[id])
 
   return (
     <div>
-      {contenidoCargando? (<Loader/>) : (<ItemList items={items}/>)}
+      <ItemList items={items}/>
     </div>
   )
 }
