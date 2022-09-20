@@ -1,16 +1,13 @@
 .divcontainer{
-    height: 350px;
-    width: 350px;
     display: flex;
-    flex-flow: row nowrap;
-    margin: 2% 0% 2% 40%;
+    margin: 2% 0% 2% 2%;
     border: 0.5px solid rgb(123, 167, 248);
     box-shadow: 0px 1px 3px 0px;
     border-radius: 15px;
     padding: 2%;
-    grid-area: prod;
     transition: ease-in 1s;
 }
+
 
 .divflex{
     display: flex;

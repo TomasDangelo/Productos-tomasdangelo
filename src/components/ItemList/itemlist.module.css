@@ -1,6 +1,9 @@
 .contenedorprods{
     display: flex;
-    flex-flow: row nowrap;
-    max-width: 30%;
     align-items: center;
+    justify-content: center;
+    flex-flow: row wrap;
+    gap: 1rem;
+    margin: 0 auto;
 }
+ 

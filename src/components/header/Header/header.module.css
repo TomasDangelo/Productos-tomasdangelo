@@ -1,10 +1,10 @@
 .contenedorMain{
-    height: 110px;
-    border-bottom: 1px solid #426ACF;
-    box-shadow: 0px 0px 4px 1px #426ACF;
+    height: 5rem;
+    box-shadow: 1px 1px 2px 2px #dae4ff;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    background-color: #dae4ff;
 }
 
 body{

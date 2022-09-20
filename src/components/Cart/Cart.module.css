@@ -58,11 +58,44 @@
     color: #ffff;
 }
 
-.vacio{
-    text-align: center;
-    font-family: inherit;
-    font-size: 1.5rem;
-    margin: 1%;
-    margin-top: 2%;
-    color: #ff5a5a;
+
+.card{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 50%;
+        height: 20rem;
+        border-radius: 10px;
+        margin: 0 auto;
+        margin-top: 5%;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -100px, 
+        rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+        background: linear-gradient(293deg, rgb(142, 142, 255) 0%, 
+        rgb(72, 225, 255) 100%);
 }
+
+
+.tituloCard, .subtituloCard{
+    text-align:center;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.5rem;
+    text-shadow: 1px 1px 1px rgb(57, 57, 57);
+}
+
+.subtituloCard{
+margin-top: 3%;
+font-size: 1.3rem;
+color: darkblue;
+}
+
+.centrarButton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 3%;
+    margin-right: 8%;
+}
+

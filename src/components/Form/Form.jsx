@@ -1,20 +1,31 @@
+import { addDoc, collection, serverTimestamp} from 'firebase/firestore';
 import React from 'react'
-import { useEffect } from 'react';
 import { useState } from 'react';
+import { database } from '../../firebaseConfig';
+import estilos from './form.module.css'
 
-const Form = () => {
-    const [nombre, setNombre] = useState('')
+const Form = ({cart, total, clearCart, handleId}) => {
+    const [nombre, setNombre] =     useState('')//React pide un estado por cada input
     const [apellido, setApellido] = useState('')
-    const [talle, setTalle] = useState('')
-    //React pide un estado por cada input
-    //También, que tengamos un value por c/ input (será dinamico, nuestro estado está leyendo todo el tiempo lo que hay ahí)
+    const [telefono, setTelefono] = useState('')
+    const [email, setEmail] =       useState('')//También, que tengamos un value por c/ input (será dinamico, nuestro estado está leyendo todo el tiempo lo que hay ahí)
     
     const handleSubmit = (event) =>{
-            //Opciones NO CONTROLADAS - NO RECOMENDADAS
-    // console.log(event.target)
-    // console.log(event.target.elements.nombre.value) //Para acceder al value del input
-    // console.log(event.target.elements.apellido.value) 
-    }
+       event.preventDefault();
+       const order = {
+        buyer: {nombre: nombre, apellido: apellido, telefono: telefono, email: email},
+        items: cart,
+        total: total,
+        date: serverTimestamp()
+                     };
+
+       const ordersCollection = collection(database, 'orders');
+       addDoc(ordersCollection, order)
+       .then((res)=>{
+       console.log(res)
+       handleId(res.id)
+       clearCart()})
+    };
 
     const handleChangeName = (event) => {
         setNombre(event.target.value)
@@ -24,37 +35,26 @@ const Form = () => {
         setApellido(event.target.value)
     }
 
-    // const handleMousemove = (e) => {
-    //     console.log(e)
-    // }
-
-    const handleChangeTalle = (e) => {
-        setTalle(e.target.value)
+    const handleChangePhone= (event) =>{
+        setTelefono(event.target.value)
     }
-    // useEffect(()=>{
 
-    //     window.addEventListener('mousemove' , handleMousemove) //En este caso necesitaríamos js porque es un evento captable con window
-    //     console.log("Creo evento")
-    //     //Este return, luego del primer renderizado, cuando haya un cambio de estado, siempre se ejecutará ANTES y primero que el evento que tengo arriba, el cual quiero eliminar, porque sino se me almacenaría siempre en mi memoria
-    //     return () => {
-    //     window.removeEventListener('mousemove' , handleMousemove)
-    //     console.log("Borro evento")
-    //     }
-    // }, [])
+    const handleChangeEmail = (event) =>{
+        setEmail(event.target.value)
+    }
 
   return (
-    <div>
-        <form action="" onSubmit={handleSubmit}>
-    <input type="text" placeholder='Nombre...' name="nombre" value={nombre} onChange={handleChangeName}/>
-    <input type="text" placeholder='Apellido...' name="apellido" value={apellido} onChange={handleChangeLastName}/>
-    <input type="number" id="edad" placeholder='Edad...'/>
+    <div className={estilos.container}>
+    <h3>Ultimo paso: completá tus datos para finalizar tu compra</h3>
+    <div className={estilos.containerinterno}>
+    <form action="" onSubmit={handleSubmit}>
+    <input className={estilos.input} type="text" placeholder='Nombre...' name="nombre" value={nombre} onChange={handleChangeName}/>
+    <input className={estilos.input} type="text" placeholder='Apellido...' name="apellido" value={apellido} onChange={handleChangeLastName}/>
+    <input className={estilos.input} type="text" placeholder='Telefono...' name="telefono" value={telefono} onChange={handleChangePhone}/>
+    <input className={estilos.input} type="text" placeholder='Email...' name="email" value={email} onChange={handleChangeEmail}/>
     <button>Enviar</button>
-    <select value={talle} onChange={handleChangeTalle} name="" id="">
-        <option value="Large">L</option>
-        <option value="Medium">M</option>
-        <option value="Small">S</option>
-    </select>
-        </form>
+    </form>
+    </div>
     </div>
   )
 }

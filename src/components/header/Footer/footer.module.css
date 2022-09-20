@@ -1,0 +1,28 @@
+.footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 3rem;
+    margin-top: 10%;
+    width: 100%;
+    box-shadow: 1px 1px 1px 1px #e0e1e2a1;    
+    background-color: rgba(222, 231, 229, 0.553);
+    opacity: 0.9;
+    color: #5a9cff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+}
+
+.linkar{
+    text-decoration: none;
+    color: #0957cb;
+}
+
+.parrafo{
+    font-size: 1rem;
+}
+
