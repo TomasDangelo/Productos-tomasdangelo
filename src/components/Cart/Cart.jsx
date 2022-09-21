@@ -43,9 +43,9 @@ return (
     <p>Precio unitario: ${item.price}</p>
     <p>Cantidad seleccionada: {item.cantidad}</p>
     <button className={estilos.botonEstilado} onClick={()=>removeItem(item.id)}>Eliminar<MdDelete></MdDelete></button>
+    <button className={estilos.botonEstilado} onClick={clearCart}>Vaciar carrito</button>
 </div>))}
 <p className={estilos.parrafo}>Total de tu compra: ${precioTotal}</p>
-<button className={estilos.botonEstilado} onClick={clearCart}>Vaciar carrito</button>
 <Form cart={cart} total={precioTotal} clearCart={clearCart} handleId={handleId}></Form>
 </div>
   )

@@ -1,3 +1,18 @@
+.card{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 50%;
+        height: 20rem;
+        border-radius: 10px;
+        margin: 0 auto;
+        margin-top: 5%;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -100px, 
+        rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+        background: linear-gradient(293deg, rgb(142, 142, 255) 0%, 
+        rgb(72, 225, 255) 100%);
+}
 .divpadre{
     display: flex;
     flex-flow: column wrap;
@@ -14,9 +29,10 @@
    justify-content: space-evenly;
    align-items: center;
    flex-direction: row;
-    border-bottom: 0.5px solid black;
-    border-radius: 8px;
-    box-shadow: 1px 1px 1px 1px;
+   box-shadow: rgba(50, 50, 93, 0.25) 10px 10px 1px -10px, 
+        rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+        background: linear-gradient(293deg, rgb(227, 227, 246) 0%, 
+        rgb(228, 228, 228) 100%);
 }
 .imagenMap{
     max-width: 3rem;
@@ -44,7 +60,7 @@
 
 .parrafo{
     margin: 1%;
-    width: 23rem;
+    width: 60rem;
     height: 1.5rem;
     display: inline-block;
     background: #5a9cff;
@@ -58,22 +74,6 @@
     color: #ffff;
 }
 
-
-.card{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        width: 50%;
-        height: 20rem;
-        border-radius: 10px;
-        margin: 0 auto;
-        margin-top: 5%;
-        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -100px, 
-        rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-        background: linear-gradient(293deg, rgb(142, 142, 255) 0%, 
-        rgb(72, 225, 255) 100%);
-}
 
 
 .tituloCard, .subtituloCard{

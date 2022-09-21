@@ -1,7 +1,6 @@
 .navitem, .navitemdos{
     list-style: none;
     color: #5a9cff;
-    /* border: 1px solid #5a9cff; */
     width: 8rem;
     height: 2.5rem;
     text-align: center;
@@ -14,29 +13,26 @@
     font-weight: 600;
     cursor: pointer;
     text-decoration: none;
-    
 }
 .lista{
     display: flex;
     align-items: center;
     justify-content: space-around;
     gap: 6rem;
-
 }
 .navitem:hover{
     background-color: #34529d;
     color: rgb(255, 255, 255);
 }
 
-.navitemdos{
-    border: #34529d;
-    height: 150%;
-    box-shadow: 0px 14px 20px -11px #34529d;
-    font-size: 1.4rem;
-    font-weight: bold;
-    margin: 0.5%;
-    font-style: italic;
-    text-shadow: 1px 1px 5px;
+.imagen{
+    display: block;
+    width: 15rem;
+    height: 10rem;
+    object-fit: contain;
+    padding: 12%;
 }
 
-
+.navBar{
+    overflow: hidden;
+}

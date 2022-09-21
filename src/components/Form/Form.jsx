@@ -44,7 +44,8 @@ const Form = ({cart, total, clearCart, handleId}) => {
 
   return (
 <div className={estilos.container}>
-    <h3>Ultimo paso: completá tus datos para finalizar tu compra</h3>
+    <h2 className={estilos.span}>Último paso.</h2>
+    <h2>Completá tus datos para finalizar tu compra</h2>
     <div className={estilos.containerinterno}>
     <form action="" onSubmit={handleSubmit}>
     <input className={estilos.input} type="text" placeholder='Nombre...' name="nombre" value={nombre} onChange={handleChangeName}/>

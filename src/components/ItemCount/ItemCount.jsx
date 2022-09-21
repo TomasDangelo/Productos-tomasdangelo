@@ -22,7 +22,8 @@ const restar = () =>{
 
 return (
 <div className={estilos.divcontainer}>    
-            <h3 className={estilos.titulo}>Agregá tu producto al carrito <BuyWidget></BuyWidget></h3>       
+            <h3 className={estilos.titulo}>Agregá tu producto al carrito</h3>       
+            <BuyWidget></BuyWidget>
             <div className={estilos.row}>
             <button className={estilos.buttons} onClick={restar}>-</button>
             <button className={estilos.buttons}>{count}</button>           
