@@ -17,7 +17,7 @@ const handleId = (id) =>{
 if(idCompra) {
   return (
   <div className={estilos.card}>
-  <h1 className={estilos.tituloCard}>Gracias por comprar! <br></br>Tu id es: {idCompra}</h1>
+  <h1 className={estilos.tituloCard}>Gracias por comprar! <br></br>Tu id es: <br /> {idCompra}</h1>
   <h3 className={estilos.subtituloCard}>Recordá guardarlo para hacer seguimiento de tu compra </h3>
   </div>)
   }
