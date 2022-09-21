@@ -15,11 +15,13 @@
     font-weight: bold;
     font-family: 'Roboto', sans-serif;
     text-align: center;
+    gap: 9rem;
 }
 
 .linkar{
     text-decoration: none;
     color: #0957cb;
+    margin: 5%;
 }
 
 .parrafo{

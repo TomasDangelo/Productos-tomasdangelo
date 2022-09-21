@@ -10,12 +10,10 @@ const {addToCart, getProductQuantity} = useContext(CartContext)
 
 const onAdd = (quantity) => {
   setCantindad(quantity)
-  alert("Productos agregados exitosamente")
   addToCart(item, quantity)
 }
 
 const quantity = getProductQuantity(item.id)
-//Para que siempre devuelva la canitdad que el cliente ya tiene en el carrito desde antes
 
   return (
 <div key={item.id}>

@@ -18,8 +18,4 @@ const Main = () => {
       
   )
 }
-
-//Element: componente que voy a elegir que se renderice cuando este en pantalla de home
-//Path: la ruta en si, a donde me dirige el linkeo
-// luego de category/ los dos puntos aclaran que será una ruta dinámica
 export default Main

@@ -19,7 +19,6 @@ const clearCart = () =>{
 const removeItem = (id) => {
   const carritoFiltrado = cart.filter((prod)=> prod.id !== id) /* Me quedo solo con los prods que no tengan el id que me llega, porque elimino uno solo */
   setCart(carritoFiltrado)
-  console.log("producto eliminado")
 }
 
 const getProductQuantity = (id) => {
@@ -38,7 +37,6 @@ const totalLength = () => {
   if (cart.length === 0){return ""} else {return cart.length}
 }
 
-console.log(cart)
 
   return (
     <CartContext.Provider value={{cart, addToCart, clearCart, removeItem, getProductQuantity, totalPrice, totalLength}}>

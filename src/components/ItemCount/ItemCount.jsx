@@ -1,5 +1,5 @@
-import React, {useState} from 'react'
-import { useEffect } from 'react'
+import React, {useState, useEffect} from 'react'
+import BuyWidget from '../header/Nav/BuyWidget'
 import estilos from './itemCount.module.css'
 
 const ItemCount = ({stock, initial = 1, onAdd}) => {
@@ -22,11 +22,11 @@ const restar = () =>{
 
 return (
 <div className={estilos.divcontainer}>    
-            <h3 className={estilos.titulo}>Agregá tu producto al carrito 🛒</h3>       
+            <h3 className={estilos.titulo}>Agregá tu producto al carrito <BuyWidget></BuyWidget></h3>       
             <div className={estilos.row}>
-              <button className={estilos.buttons} onClick={restar}>-</button>
-              <button className={estilos.buttons}>{count}</button>           
-              <button className={estilos.buttons} onClick={sumar}>+</button>
+            <button className={estilos.buttons} onClick={restar}>-</button>
+            <button className={estilos.buttons}>{count}</button>           
+            <button className={estilos.buttons} onClick={sumar}>+</button>
             </div>         
             <button className={estilos.carrito} onClick={()=>onAdd(count)}>Agregar al carrito</button>
 </div>

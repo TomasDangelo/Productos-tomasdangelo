@@ -22,7 +22,6 @@ const Form = ({cart, total, clearCart, handleId}) => {
        const ordersCollection = collection(database, 'orders');
        addDoc(ordersCollection, order)
        .then((res)=>{
-       console.log(res)
        handleId(res.id)
        clearCart()})
     };

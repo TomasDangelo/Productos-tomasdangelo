@@ -1,16 +1,14 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import estilos from './nav.module.css'
 import Button from '../../Button/Button'
 import {NavLink} from 'react-router-dom'
-import { useState } from 'react'
-import { useEffect } from 'react'
 import { collection, getDocs } from 'firebase/firestore'
 import { database } from '../../../firebaseConfig'
 
 const Navbar = () => {
 const [categories, setCategories] = useState([])
 
-useEffect(()=>{
+  useEffect(()=>{
 const collectionCategories = collection(database, "categorias")
 
 getDocs(collectionCategories)
@@ -38,10 +36,4 @@ setCategories(categorias)})
   export default Navbar
 
 
-
-
-
-
-  //     <li className={estilos.navitem}><NavLink className={estilos.navitem} to='/category/zapatillas'>Zapatillas</NavLink></li>
-  //     <li className={estilos.navitem}><NavLink className={estilos.navitem} to='/category/remeras'>Remeras</NavLink></li>
-  //     <li className={estilos.navitem}><NavLink className={estilos.navitem} to='/category/gorras'>Gorras</NavLink></li>
+    

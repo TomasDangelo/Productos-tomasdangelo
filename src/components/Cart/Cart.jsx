@@ -3,7 +3,8 @@ import { CartContext } from '../../context/CartContext'
 import Button from '../Button/Button'
 import estilos from './Cart.module.css'
 import Form from '../Form/Form'
-
+import BuyWidget from '../header/Nav/BuyWidget'
+import {MdDelete} from 'react-icons/md'
 
 
 const Cart = () => {
@@ -26,7 +27,7 @@ if(idCompra) {
 if (cart.length === 0){
 return <div className={estilos.card}>
 <h3 className={estilos.tituloCard}>Tu carrito está vacío. 
-<br></br> Seleccioná algún producto y verás aquí lo que hayas elegido🛒</h3>
+<br></br> Seleccioná algún producto y verás aquí lo que hayas elegido <BuyWidget></BuyWidget></h3>
 <div className={estilos.centrarButton}><Button className={estilos.btnVolver} isInCart={false}></Button></div>
 </div>
 }
@@ -41,7 +42,7 @@ return (
     <h2>{item.title}</h2>
     <p>Precio unitario: ${item.price}</p>
     <p>Cantidad seleccionada: {item.cantidad}</p>
-    <button className={estilos.botonEstilado} onClick={()=>removeItem(item.id)}>Eliminar producto🗑️</button>
+    <button className={estilos.botonEstilado} onClick={()=>removeItem(item.id)}>Eliminar<MdDelete></MdDelete></button>
 </div>))}
 <p className={estilos.parrafo}>Total de tu compra: ${precioTotal}</p>
 <button className={estilos.botonEstilado} onClick={clearCart}>Vaciar carrito</button>
